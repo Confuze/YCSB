@@ -40,7 +40,7 @@ import site.ycsb.*;
 public class Neo4jClient extends DB {
   private Driver driver;
 
-  /** Integer used to keep track of current threads. */
+    /** Integer used to keep track of current threads. */
   private static final AtomicInteger INIT_COUNT = new AtomicInteger(0);
 
   /**
@@ -58,7 +58,7 @@ public class Neo4jClient extends DB {
           driver = GraphDatabase.driver(url,
               AuthTokens.basic(properties.getProperty("neo4j.user"), properties.getProperty("neo4j.passwd")));
           driver.verifyConnectivity();
-          System.out.println("neo4j client connection created with " + url);
+          System.out.println("Neo4j client connection created with " + url);
         } catch (Exception e) {
           System.err.println("Could not initialize connection to neo4j: " + e.toString());
           e.printStackTrace();
